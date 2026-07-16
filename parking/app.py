@@ -105,19 +105,15 @@ for c in df.columns:
         break
 
 if fee_col:
-    # 요금 정제 (쉼표 제거 후 숫지만 추출)
-    df[fee_col] = (df[fee_col]
-                   .astype(str)
-                   .str.replace(",", "")
-                   .str.extract(r"(\d+)")
-                   .fillna(0)
-                   .astype(int))
+    # 안전하게 결측치 및 문자열을 숫자로 전처리
+    df[fee_col] = df[fee_col].fillna("0").astype(str)
+    # 숫자 형태만 추출하고, 추출되지 않은 행은 '0'으로 채우기
+    df[fee_col] = df[fee_col].str.replace(",", "").str.extract(r"(\d+)").fillna(0).astype(int)
     
-    # 데이터가 있을 때만 슬라이더 활성화
+    # 데이터가 비어있지 않을 때만 슬라이더를 띄웁니다.
     if not df.empty:
         max_fee = int(df[fee_col].max())
-        # max_fee가 0일 때 슬라이더 에러 방지
-        max_fee = max(max_fee, 1)
+        max_fee = max(max_fee, 1) # 에러 방지
         fee = st.sidebar.slider("기본요금", 0, max_fee, max_fee)
         df = df[df[fee_col] <= fee]
     else:
