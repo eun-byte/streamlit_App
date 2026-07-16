@@ -452,3 +452,11 @@ st.download_button(
     mime="text/csv"
 
 )
+streamlit>=1.36.0
+pandas>=2.2.2
+numpy>=1.26.4
+folium>=0.17.0
+streamlit-folium>=0.22.0
+plotly>=5.23.0
+geopy>=2.4.1
+requests>=2.32.3
