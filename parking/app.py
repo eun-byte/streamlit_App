@@ -18,10 +18,10 @@ st.title("🅿 서울시 공영주차장 정보")
 #####################################
 uploaded_file = st.sidebar.file_uploader("CSV 업로드", type=["csv"])
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, encoding="utf-8")
+    df = pd.read_csv(uploaded_file, encoding="cp949")
 else:
     try:
-        df = pd.read_csv("parking.csv", encoding="utf-8")
+        df = pd.read_csv("parking.csv", encoding="cp949")
     except FileNotFoundError:
         st.error("🚨 'parking.csv' 파일을 찾을 수 없습니다. CSV 파일을 업로드해주세요!")
         st.stop()
