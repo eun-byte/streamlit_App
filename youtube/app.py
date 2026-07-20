@@ -393,3 +393,4 @@ with st.sidebar:
     st.divider()
 
     st.caption('Streamlit Cloud 배포용 프로젝트')
+YOUTUBE_API_KEY = "AIzaSyDjVDpNMP-FsJV6uWUcms8kJ3adAiypAyo"
