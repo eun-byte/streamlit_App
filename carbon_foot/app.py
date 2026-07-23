@@ -56,7 +56,8 @@ st.markdown("""
     font-size: 0.9rem;
 }
 </style>
-""", unsafe_allow_dict=True)
+""", unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정!
+
 
 # ==========================================
 # 2. 로직 함수 정의 (탄소 계산 및 지구 편지)
