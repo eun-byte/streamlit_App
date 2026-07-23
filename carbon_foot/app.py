@@ -227,7 +227,7 @@ with col1:
         <h4>오늘의 탄소배출량</h4>
         <h2 style="color:#2E7D32;">{total_emission} <small>kg CO₂</small></h2>
     </div>
-    """, unsafe_allow_dict=True)
+    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
 
 with col2:
     st.markdown(f"""
@@ -235,7 +235,7 @@ with col2:
         <h4>친환경 점수</h4>
         <h2 style="color:#1565C0;">{score} <small>/ 100점</small></h2>
     </div>
-    """, unsafe_allow_dict=True)
+    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
 
 with col3:
     st.markdown(f"""
@@ -243,7 +243,7 @@ with col3:
         <h4>지구 건강도</h4>
         <h2>{emoji} <span style="font-size:1.2rem;">{status_label}</span></h2>
     </div>
-    """, unsafe_allow_dict=True)
+    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
 
 with col4:
     st.markdown(f"""
@@ -251,7 +251,7 @@ with col4:
         <h4>나무 효과</h4>
         <h2 style="color:#2E7D32;">🌲 {trees} <small>그루</small></h2>
     </div>
-    """, unsafe_allow_dict=True)
+    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
 
 st.markdown("<br>", unsafe_allow_dict=True)
 
