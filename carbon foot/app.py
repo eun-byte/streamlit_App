@@ -1,14 +1,3 @@
-streamlit>=1.30.0
-pandas>=2.0.0
-plotly>=5.18.0
-numpy>=1.24.0
-matplotlib>=3.7.0
-[theme]
-primaryColor = "#2ECC71"
-backgroundColor = "#F4F9F4"
-secondaryBackgroundColor = "#E8F5E9"
-textColor = "#1B4332"
-font = "sans serif"
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
