@@ -56,8 +56,7 @@ st.markdown("""
     font-size: 0.9rem;
 }
 </style>
-""", unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정!
-
+""", unsafe_allow_html=True)
 
 # ==========================================
 # 2. 로직 함수 정의 (탄소 계산 및 지구 편지)
@@ -227,7 +226,7 @@ with col1:
         <h4>오늘의 탄소배출량</h4>
         <h2 style="color:#2E7D32;">{total_emission} <small>kg CO₂</small></h2>
     </div>
-    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
+    """, unsafe_allow_html=True)
 
 with col2:
     st.markdown(f"""
@@ -235,7 +234,7 @@ with col2:
         <h4>친환경 점수</h4>
         <h2 style="color:#1565C0;">{score} <small>/ 100점</small></h2>
     </div>
-    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
+    """, unsafe_allow_html=True)
 
 with col3:
     st.markdown(f"""
@@ -243,7 +242,7 @@ with col3:
         <h4>지구 건강도</h4>
         <h2>{emoji} <span style="font-size:1.2rem;">{status_label}</span></h2>
     </div>
-    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
+    """, unsafe_allow_html=True)
 
 with col4:
     st.markdown(f"""
@@ -251,9 +250,9 @@ with col4:
         <h4>나무 효과</h4>
         <h2 style="color:#2E7D32;">🌲 {trees} <small>그루</small></h2>
     </div>
-    """, unsafe_allow_html=True)  # <-- unsafe_allow_html 로 수정
+    """, unsafe_allow_html=True)
 
-st.markdown("<br>", unsafe_allow_dict=True)
+st.markdown("<br>", unsafe_allow_html=True)
 
 # 차트 시각화
 left_col, right_col = st.columns(2)
@@ -300,16 +299,16 @@ st.markdown(f"""
 <div class="earth-letter">
     {letter_text.replace('\n', '<br>')}
 </div>
-""", unsafe_allow_dict=True)
+""", unsafe_allow_html=True)
 
-st.markdown("<br>", unsafe_allow_dict=True)
+st.markdown("<br>", unsafe_allow_html=True)
 
 st.subheader("🏅 오늘 획득한 배지")
 badges = check_badges(transport, recycling, tumbler, green_actions, score)
 
 if badges:
     badge_html = "".join([f'<span class="badge-box">{b}</span>' for b in badges])
-    st.markdown(badge_html, unsafe_allow_dict=True)
+    st.markdown(badge_html, unsafe_allow_html=True)
 else:
     st.caption("아직 획득한 배지가 없어요. 친환경 실천 항목을 늘려보세요!")
 
@@ -332,4 +331,3 @@ with col_quiz:
             st.success("정답입니다! 종이컵 1개당 약 11g의 CO₂가 생성됩니다.")
         else:
             st.error("아쉽네요! 정답은 '11g'입니다.")
-            
